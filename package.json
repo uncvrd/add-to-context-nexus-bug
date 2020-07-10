@@ -1,10 +1,19 @@
 {
-  "name": "add-to-context-bug",
+  "name": "releasehub-server",
   "license": "UNLICENSED",
   "version": "0.0.0",
   "dependencies": {
+    "@elastic/elasticsearch": "^7.8.0",
+    "axios": "^0.19.2",
+    "cors": "^2.8.5",
+    "crypto-random-string": "^3.2.0",
+    "dotenv": "^8.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.27.0",
     "nexus": "^0.25.0",
-    "nexus-plugin-prisma": "^0.16.1"
+    "nexus-plugin-prisma": "^0.16.1",
+    "nexus-plugin-shield": "^0.2.0",
+    "path": "^0.12.7"
   },
   "scripts": {
     "format": "npx prettier --write './**/*.{ts,md}'",
@@ -18,6 +27,10 @@
     "trailingComma": "all"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.6",
+    "@types/crypto-random-string": "^2.0.0",
+    "@types/elasticsearch": "^5.0.36",
+    "@types/jsonwebtoken": "^8.5.0",
     "prettier": "^2.0.5"
   }
 }

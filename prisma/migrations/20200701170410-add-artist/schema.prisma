@@ -1,0 +1,33 @@
+datasource db {
+  provider = "postgresql"
+  url = "***"
+}
+
+generator prisma_client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id       Int     @id @default(autoincrement())
+  uid      String  @unique
+  email    String  @unique
+  username String  @unique
+  imageURL String?
+  artistId Int?
+}
+
+model Album {
+  id Int @id @default(autoincrement())
+  title String
+  uid String @unique
+  appleId Int @unique
+  date DateTime
+  imageURL String?
+}
+
+model Artist {
+  id Int @id @default(autoincrement())
+  name String
+  imageURL String
+  appleId Int
+}

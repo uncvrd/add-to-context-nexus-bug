@@ -1,6 +1,6 @@
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url = "***"
 }
 
 generator prisma_client {
@@ -9,7 +9,6 @@ generator prisma_client {
 
 enum Status {
   IN_REVIEW
-  SIMILAR
   APPROVED
   DENIED
 }
@@ -28,30 +27,14 @@ model User {
 }
 
 model Album {
-  id          Int      @id @default(autoincrement())
-  title       String
-  uid         String   @unique
-  appleId     Int      @unique
-  date        DateTime
-  imageURL    String?
-  bgColor     String?
-  recordLabel String
-  copyright   String?
-  editorial   String?
-  artists     Artist[]
-  savedBy     User[]
-  genres      Genre[]
-  songs       Song[]
-}
-
-model Song {
-  id         Int @id @default(autoincrement())
-  title      String
-  appleId    Int @unique
-  isrc       String @unique
-  previewURL String
-  albumId    Int
-  album      Album @relation(fields: [albumId], references: [id])
+  id       Int      @id @default(autoincrement())
+  title    String
+  uid      String   @unique
+  appleId  Int      @unique
+  date     DateTime
+  imageURL String?
+  artists  Artist[]
+  savedBy  User[]
 }
 
 model Artist {
@@ -80,5 +63,4 @@ model Genre {
   id      Int      @id @default(autoincrement())
   name    String   @unique
   artists Artist[]
-  albums  Album[]
 }

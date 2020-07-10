@@ -1,0 +1,29 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "UpdateEnum",
+      "enum": "Status",
+      "createdValues": [
+        "IN_REVIEW"
+      ],
+      "deletedValues": [
+        "REVIEW"
+      ]
+    },
+    {
+      "tag": "UpdateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Rumor",
+          "field": "status"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "newValue": "IN_REVIEW"
+    }
+  ]
+}

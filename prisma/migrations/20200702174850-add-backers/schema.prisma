@@ -1,0 +1,54 @@
+datasource db {
+  provider = "postgresql"
+  url = "***"
+}
+
+generator prisma_client {
+  provider = "prisma-client-js"
+}
+
+enum Status {
+  IN_REVIEW
+  APPROVED
+  DENIED
+}
+
+model User {
+  id            Int      @id @default(autoincrement())
+  uid           String   @unique
+  email         String   @unique
+  username      String   @unique
+  imageURL      String?
+  artistId      Int?
+  following     Artist[]
+  contributions Rumor[]
+}
+
+model Album {
+  id       Int      @id @default(autoincrement())
+  title    String
+  uid      String   @unique
+  appleId  Int      @unique
+  date     DateTime
+  imageURL String?
+  artists  Artist[]
+}
+
+model Artist {
+  id        Int     @id @default(autoincrement())
+  name      String
+  imageURL  String?
+  appleId   Int
+  followers User[]
+  albums    Album[]
+  rumors    Rumor[]
+}
+
+model Rumor {
+  id      Int      @id @default(autoincrement())
+  title   String
+  date    DateTime
+  status  Status   @default(IN_REVIEW)
+  artists Artist[]
+  backers User[]
+}

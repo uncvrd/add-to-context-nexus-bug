@@ -1,0 +1,20 @@
+# Prisma Migrate lockfile v1
+
+20200630232402-init-user
+20200630235206-add-uid-user
+20200701144622-add-artist
+20200701170410-add-artist
+20200701181819-add-rumor
+20200701221701-make-image-urlartist-optional
+20200702171904-update-status-enum
+20200702174850-add-backers
+20200702190649-add-genre
+20200702201135-update-apple-id-to-string
+20200702225548-add-user-bio
+20200705104604-add-rumor-to-user-explicit-join
+20200705112046-remove-explicity-user-rumor
+20200705112621-remove-rumor-to-user-explicit
+20200705113239-add-required-creator-rumor
+20200707203440-add-user-to-album-collection
+20200707203555-add-user-to-album-collection
+20200708003829-add-song
